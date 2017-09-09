@@ -55,10 +55,13 @@
     "start": "npm run start-js",
     "test": "node scripts/test.js --env=jsdom",
     "setup": "sh scripts/setup.sh",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "homepage": "https://alesiapavliuchenkova.github.io",
+    "deploy" : "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "babel-preset-stage-0": "^6.24.1",
+    "gh-pages": "^1.0.0",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
