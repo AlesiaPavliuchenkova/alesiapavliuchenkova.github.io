@@ -1,0 +1,51 @@
+@import '../../theme/palette';
+
+.page {
+    h1 {
+        font-family: Spinnaker sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 26.4px;
+  }
+
+    span {
+        font-family: Spinnaker sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 15.4px;
+  }
+
+    a {
+        font-family: Spinnaker sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 15.4px;
+        text-decoration: none;
+  }
+
+    h2 {
+        font-family: Spinnaker sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 15.4px;
+  }
+
+    ul {
+        font-family: Spinnaker sans-serif;
+        font-size: 17px;
+  }
+
+    p {
+        margin-top: 15px;
+        font-family: Spinnaker sans-serif;
+        font-size: 17px;
+  }
+
+}

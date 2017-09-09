@@ -1,0 +1,24 @@
+@import '../../theme/palette';
+
+.education {
+    margin: 20px;
+    text-align: left;
+
+    h1 {
+        color: $paletteColor3;
+        font-size: 20px;
+        text-decoration: underline;
+  }
+
+    div {
+        width: 300px;
+  }
+
+    img {
+        width: 300px;
+        height: 300px;
+        margin-right: 20px;
+        float: left;
+  }
+
+}

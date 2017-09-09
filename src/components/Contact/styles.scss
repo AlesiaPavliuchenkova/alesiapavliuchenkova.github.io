@@ -1,0 +1,31 @@
+@import '../../theme/palette';
+
+.contact {
+    margin: 20px;
+    text-align: left;
+
+    h1 {
+        color: $paletteColor3;
+        font-size: 20px;
+        text-decoration: underline;
+  }
+    div {
+        width: 300px;
+        margin-bottom: 20px;
+        float: left;
+  }
+
+    img {
+        width: 15px;
+        height: auto;
+        margin-right: 7px;
+        cursor: pointer;
+  }
+
+    a {
+        margin-top: 15px;
+        font-family: Spinnaker sans-serif;
+        font-size: 17px;
+  }
+
+}

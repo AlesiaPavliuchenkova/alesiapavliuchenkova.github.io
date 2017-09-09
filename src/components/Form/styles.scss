@@ -1,0 +1,40 @@
+@import '../../theme/palette';
+
+.form {
+    display: inline-block;
+    min-width: 300px;
+    max-width: 300px;
+
+    input, textarea {
+        width: 290px;
+        min-width: 290px;
+        max-width: 290px;
+        height: 30px;
+        margin-bottom: 5px;
+        padding: 2px 5px;
+        border: 0;
+        outline: none;
+        background-color: $paletteColor5;
+        color: $paletteColor4;
+        font-size: 14px;
+  }
+
+    textarea {
+        height: 99px;
+        max-height: 99px;
+  }
+
+    .submit {
+        width: 50px;
+        min-width: 50px;
+        height: 25px;
+        float: right;
+        border: 0;
+        background-color: $paletteColor3;
+        color: $paletteColor2;
+        font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+  }
+}
