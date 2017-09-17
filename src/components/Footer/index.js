@@ -44,12 +44,29 @@ export default class Footer extends Component {
                             target = '_top'>{ email }
                         </a>
                     </span>
-                    <span>{ phone }</span>
+                    <span>
+                        <a
+                            className = { Styles.phone }
+                            href = { `tel:${phone}` }>{ phone }
+                        </a>
+                    </span>
                     <span>&copy; 2017 { profileData.name }</span>
                     <span>
-                        <a href = { fbLink } target = { targetVal }><img src = { fbIcon } /></a>
-                        <a href = { githubLink } target = { targetVal }><img src = { githubIcon } /></a>
-                        <a href = { inLink } target = { targetVal }><img src = { inIcon } /></a>
+                        <a href = { fbLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { fbIcon } />
+                            </span>
+                        </a>
+                        <a href = { githubLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { githubIcon } />
+                            </span>
+                        </a>
+                        <a href = { inLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { inIcon } />
+                            </span>
+                        </a>
                     </span>
                 </div>
             </section>

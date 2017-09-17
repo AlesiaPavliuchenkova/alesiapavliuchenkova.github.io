@@ -5,10 +5,20 @@
     text-align: left;
 
     h1 {
+        margin-top: 0;
+        margin-bottom: 5px;
         color: $paletteColor3;
         font-size: 20px;
+        line-height: 34px;
         text-decoration: underline;
   }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 5px;
+        line-height: 34px;
+  }
+
     div {
         width: 300px;
         margin-bottom: 20px;
@@ -16,9 +26,9 @@
   }
 
     img {
+        display: inline;
         width: 15px;
         height: auto;
-        margin-right: 7px;
         cursor: pointer;
   }
 
@@ -26,6 +36,23 @@
         margin-top: 15px;
         font-family: Spinnaker sans-serif;
         font-size: 17px;
+        text-decoration: underline;
+  }
+
+    .circle {
+        margin-right: 10px;
+        padding: 8px;
+        border: 1px $paletteColor1 solid;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+
+    .circle:hover {
+        border-color: $paletteColor3;
+    }
+
+    .phone {
+        color: $paletteColor1;
   }
 
 }

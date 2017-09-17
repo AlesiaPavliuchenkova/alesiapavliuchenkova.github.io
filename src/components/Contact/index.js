@@ -43,11 +43,28 @@ export default class Contact extends Component {
                         href = { `mailto:${email}` }
                         target = '_top'>{ email }</a>
                     </p>
-                    <p>{ phone }</p>
                     <p>
-                        <a href = { fbLink } target = { targetVal }><img src = { fbIcon } /></a>
-                        <a href = { githubLink } target = { targetVal }><img src = { githubIcon } /></a>
-                        <a href = { inLink } target = { targetVal }><img src = { inIcon } /></a>
+                        <a
+                            className = { Styles.phone }
+                            href = { `tel:${phone}` }>{ phone }
+                        </a>
+                    </p>
+                    <p>
+                        <a href = { fbLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { fbIcon } />
+                            </span>
+                        </a>
+                        <a href = { githubLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { githubIcon } />
+                            </span>
+                        </a>
+                        <a href = { inLink } target = { targetVal }>
+                            <span className = { Styles.circle }>
+                                <img src = { inIcon } />
+                            </span>
+                        </a>
                     </p>
                 </div>
                 <Form />

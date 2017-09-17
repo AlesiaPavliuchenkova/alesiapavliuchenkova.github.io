@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 
 // Instruments
 import Styles from './styles.scss';
-import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
 import TweenMax from 'gsap';
+import { Route, Switch } from 'react-router-dom';
+import Experience from '../../components/Experience';
+import Skills from '../../components/Skills';
+import Education from '../../components/Education';
+import Contact from '../../components/Contact';
 
 export default class Container extends Component {
-    static propTypes = {
-        container: PropTypes.object.isRequired
-    };
 
     constructor () {
         super();
@@ -21,10 +22,6 @@ export default class Container extends Component {
     state = {
         isMoving: true
     };
-
-    shouldComponentUpdate (nextProps) {
-        return nextProps.container.type.name !== this.props.container.type.name;
-    }
 
     _handleMoveContainer = (flag) => {
         const { content } = this;
@@ -41,7 +38,6 @@ export default class Container extends Component {
     };
 
     render () {
-        const { container } = this.props;
         const { isMoving } = this.state;
 
         return (
@@ -54,7 +50,13 @@ export default class Container extends Component {
                         onEnter = { () => this.handleMoveContainer(false) }
                         onExit = { () => this.handleMoveContainer(true) }>
                         <div ref = { (content) => this.content = content }>
-                            { container }
+                            <Switch>
+                                <Route exact component = { Experience } path = '/Experience' />
+                                <Route component = { Skills } path = '/Skills' />
+                                <Route component = { Education } path = '/Education' />
+                                <Route component = { Contact } path = '/Contact' />
+                                <Route component = { Experience } path = '*' />
+                            </Switch>
                         </div>
                     </Transition>
                 </div>

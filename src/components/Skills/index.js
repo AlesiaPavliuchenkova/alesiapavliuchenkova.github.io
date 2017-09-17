@@ -4,12 +4,22 @@ import React, { Component } from 'react';
 // Instruments
 import PropTypes from 'prop-types';
 import Styles from './styles.scss';
-import { Transition } from 'react-transition-group';
+import { Transition, TransitionGroup } from 'react-transition-group';
 import TweenMax from 'gsap';
 
 // Constants
-// this list should be replaced with Linkedin data
-const skills = ['Oracle', 'SQL', 'PL/SQL', 'Java Core', 'HTML', 'CSS'];
+export const skills = [
+    'Oracle',
+    'SQL',
+    'PL/SQL',
+    'Java Core',
+    'Tortoise SVN',
+    'Github',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React.js',
+    'Collabnet'];
 
 export default class Skills extends Component {
     static contextTypes = {
@@ -19,41 +29,54 @@ export default class Skills extends Component {
     constructor () {
         super();
 
-        this.handleUlTransition = ::this._handleUlTransition;
+        this.handleLiTransition = ::this._handleLiTransition;
     }
 
-    //rewrite ul items will move odd/even different sides
-    _handleUlTransition = () => {
-        const { list } = this;
+    state = {
+        skillsList: []
+    };
+
+    componentWillMount () {
+        this.setState({
+            skillsList: skills.map((item) => (
+                <Transition
+                    appear
+                    in
+                    key = { item }
+                    timeout = { 1700 }
+                    onEntered = { () => this.handleLiTransition(item) }>
+                    <li
+                        key = { item }
+                        ref = { (skill) => this[item] = skill }><span>{item}</span>
+                    </li>
+                </Transition>
+            ))
+        });
+    }
+
+    _handleLiTransition = (obj) => {
+        const skill = this[obj];
+        const index = skills.indexOf(obj);
 
         TweenMax.fromTo(
-            list,
+            skill,
             1.7,
             { x: 0 },
-            { x: -40 });
+            { x: index % 2 === 0 ? 30 : -30 });
     };
 
     render () {
         const { avatar } = this.context;
+        const { skillsList } = this.state;
 
         return (
             <section className = { Styles.skills }>
                 <img src = { avatar } />
                 <div>
                     <h1>Skills</h1>
-                    <Transition
-                        appear
-                        in
-                        timeout = { 1700 }
-                        onEntered = { this.handleUlTransition }>
-                        <div ref = { (list) => this.list = list }>
-                            <ul>
-                                { skills.map((item) => <li key = { item }>{ item }</li>) }
-                            </ul>
-                        </div>
-                    </Transition>
-                    <p>List should be taken from Linkedin api</p>
-                    <p>UL items will move odd/even different sides</p>
+                    <TransitionGroup>
+                        { skillsList }
+                    </TransitionGroup>
                 </div>
             </section>
         );

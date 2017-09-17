@@ -11,7 +11,6 @@ import avatar from '../../theme/assets/avatar.jpg';
 import fbIcon from '../../theme/assets/fb.PNG';
 import inIcon from '../../theme/assets/in.png';
 import githubIcon from '../../theme/assets/github.png';
-import Experience from '../Experience/index';
 
 // Constants
 const fbLink = 'https://www.facebook.com/lisenok.aesya';
@@ -19,7 +18,6 @@ const inLink = 'https://www.linkedin.com/in/alesia-pavliuchenkova-29303b83/';
 const githubLink = 'https://github.com/AlesiaPavliuchenkova';
 const targetVal = '_blank';
 const apiUser = 'https://api.github.com/users/AlesiaPavliuchenkova';
-const apiEvents = 'https://api.github.com/users/AlesiaPavliuchenkova/events/public';
 
 export default class Page extends Component {
     static childContextTypes = {
@@ -36,24 +34,18 @@ export default class Page extends Component {
         targetVal:   PropTypes.string.isRequired
     };
 
-    constructor () {
-        super();
-
-        this.setContainerContent = ::this._setContainerContent;
-    }
-
     state = {
-        container:   {},
         profileData: {},
-        email:       ''
+        email:       '',
+        renderFlag:  false
     };
 
     getChildContext () {
-        const { profileData, email } = this.state;
+        const { profileData } = this.state;
 
         return {
             avatar,
-            email,
+            email: 'alesia.pavliuchenkova@gmail.com',
             fbIcon,
             fbLink,
             githubIcon,
@@ -67,8 +59,6 @@ export default class Page extends Component {
     }
 
     componentWillMount () {
-        this.setContainerContent(<Experience />);
-
         fetch(apiUser, {
             method: 'GET'
         })
@@ -81,51 +71,23 @@ export default class Page extends Component {
             })
             .then((data) => {
                 this.setState({
-                    profileData: data
+                    profileData: data,
+                    renderFlag:  true
                 });
-            })
-            .catch(({ message }) => console.log(message));// eslint-disable-line
-
-        fetch(apiEvents, {
-            method: 'GET'
-        })
-            .then((response) => {
-                if (response.status !== 200) {
-                    throw new Error('Posts were not loaded');
-                }
-
-                return response.json();
-            })
-            .then((data) => {
-                if (typeof data !== undefined) {
-                    this.setState({
-                        email: data[0].payload.commits[0].author.email
-                    });
-                }
             })
             .catch(({ message }) => console.log(message));// eslint-disable-line
     }
 
-    _setContainerContent = (obj) => {
-        this.setState({
-            container: obj
-        });
-    };
-
     render () {
-        const { container } = this.state;
 
-        //console.log('render page'); //eslint-disable-line
+        if (!this.state.renderFlag) {
+            return null; //prevent render until fetch return response
+        }
 
         return (
             <section className = { Styles.page }>
-                <Header
-                    container = { container }
-                    setContainerContent = { this.setContainerContent }
-                />
-                <Container
-                    container = { container }
-                />
+                <Header />
+                <Container />
                 <Footer />
             </section>
         );

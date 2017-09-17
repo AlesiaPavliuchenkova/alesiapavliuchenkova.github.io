@@ -5,9 +5,30 @@
     text-align: left;
 
     h1 {
+        margin-top: 0;
         color: $paletteColor3;
         font-size: 20px;
         text-decoration: underline;
+  }
+
+    ul {
+        padding: 0;
+        list-style: none;
+  }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    span {
+        display: block;
+        padding: 5px;
+        font-family: Spinnaker sans-serif;
+        font-size: 16px;
+  }
+
+    .header {
+        font-weight: bold;
   }
 
     div {

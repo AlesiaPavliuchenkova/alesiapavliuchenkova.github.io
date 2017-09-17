@@ -1,14 +1,11 @@
 @import '../../theme/palette';
 
 .footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     min-width: 350px;
-    height: 140px;
+    height: 160px;
     margin-top: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 20px;
     background-color: $paletteColor5;
     text-align: center;
@@ -27,8 +24,28 @@
     img {
         width: 15px;
         height: auto;
-        margin-top: 5px;
-        margin-right: 7px;
         cursor: pointer;
+  }
+
+    .circle {
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 6px 8px;
+        border: 1px $paletteColor1 solid;
+        border-radius: 50%;
+        vertical-align: middle;
+  }
+
+    .circle:hover {
+        border-color: $paletteColor3;
+  }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .phone {
+        color: $paletteColor1;
   }
 }

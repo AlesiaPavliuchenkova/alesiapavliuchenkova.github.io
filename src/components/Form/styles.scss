@@ -37,4 +37,27 @@
         text-align: center;
         cursor: pointer;
   }
+
+    span {
+        font-family: Spinnaker sans-serif;
+        font-size: 17px;
+        line-height: 25px;
+  }
+
+    .exception {
+        color: $paletteColor6;
+    }
+
+    .success {
+        color: $paletteColor1;
+  }
+
+    .loaderHide {
+        display: none;
+    }
+
+    .loaderShow {
+        display: inline;
+        font-size: 17px;
+    }
 }

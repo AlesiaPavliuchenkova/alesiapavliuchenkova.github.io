@@ -1,0 +1,20 @@
+Server listen to port 3001 
+success!
+ <span style="font-family: Spinnaker sans-serif; font-size: 16px">
+                     <strong>Sender: <em>Alesia lisenok-aesya@yandex.ru</em></strong><br />
+                     <strong>Message:</strong><br /> 
+                     fhff</span> 
+Server listen to port 3001 
+success!
+ <span style="font-family: Spinnaker sans-serif; font-size: 16px">
+                     <strong>Sender: <em>ff lisenok-aesya@yandex.ru</em></strong><br />
+                     <strong>Message:</strong><br /> 
+                     nnjnj</span> 
+Error: getaddrinfo ENOTFOUND smtp.gmail.com smtp.gmail.com:465 
+Server listen to port 3001 
+success!
+ <span style="font-family: Spinnaker sans-serif; font-size: 16px">
+                     <strong>Sender: <em>Alesia lisenok-aesya@yandex.ru</em></strong><br />
+                     <strong>Message:</strong><br /> 
+                     sdcd</span> 
+Error: getaddrinfo ENOTFOUND smtp.gmail.com smtp.gmail.com:465 
