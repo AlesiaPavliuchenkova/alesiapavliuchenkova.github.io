@@ -21,7 +21,6 @@ export default class Header extends Component {
                     <h2>{ profileData.company }</h2>
                     <NavBar />
                 </div>
-                <div />
             </section>
         );
     }

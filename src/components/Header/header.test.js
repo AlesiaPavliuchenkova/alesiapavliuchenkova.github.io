@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './';
 import { shallow } from 'enzyme';
-import { testData } from '../../helpers/testData.js';
+import { testData } from '../../config/testData.js';
 import NavBar from '../../components/NavBar';
 
 const { profileData } = testData;
@@ -17,8 +17,8 @@ describe('Header component:', () => {
         expect(result.find('section').length).toBe(1);
     });
 
-    test('Should have 2 \'div\' elements', () => {
-        expect(result.find('div').length).toBe(2);
+    test('Should have 1 \'div\' elements', () => {
+        expect(result.find('div').length).toBe(1);
     });
 
     test('Should have 1 \'h1\' element', () => {

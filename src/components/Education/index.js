@@ -29,25 +29,12 @@ export default class Education extends Component {
         avatar: PropTypes.string.isRequired
     };
 
-    state = {
-        educationList: []
-    };
-
-    componentWillMount () {
-        this.setState({
-            educationList: education.map((item) => (
-                <li key = { getUniqueID(15) }>
-                    <span className = { Styles.header }>University: { item.name }</span>
-                    <span>Speciality: { item.speciality }</span>
-                    <span>Degree: { item.degree }</span>
-                    <span>Years: { item.startYear } - { item.endYear }</span>
-                </li>))
-        });
+    shouldComponentUpdate () {
+        return false;
     }
 
     render () {
         const { avatar } = this.context;
-        const { educationList } = this.state;
 
         return (
             <section className = { Styles.education }>
@@ -55,7 +42,13 @@ export default class Education extends Component {
                 <div>
                     <h1>Education</h1>
                     <ul>
-                        { educationList }
+                        { education.map((item) => (
+                            <li key = { getUniqueID(15) }>
+                                <span className = { Styles.header }>University: { item.name }</span>
+                                <span>Speciality: { item.speciality }</span>
+                                <span>Degree: { item.degree }</span>
+                                <span>Years: { item.startYear } - { item.endYear }</span>
+                            </li>)) }
                     </ul>
                 </div>
             </section>

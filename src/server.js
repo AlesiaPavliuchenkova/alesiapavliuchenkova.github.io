@@ -1,7 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-const config = require('./mailConfig');
+const config = require('./config/backend');
 const fs = require('fs');
 const app = express();
 

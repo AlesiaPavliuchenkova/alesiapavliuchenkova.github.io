@@ -11,7 +11,7 @@ import Skills from '../../components/Skills';
 import Education from '../../components/Education';
 import Contact from '../../components/Contact';
 
-export default class Container extends Component {
+export default class Resume extends Component {
 
     constructor () {
         super();
@@ -28,7 +28,7 @@ export default class Container extends Component {
 
         TweenMax.fromTo(
             content,
-            1.5,
+            1.2,
             { x: window.innerWidth },
             { x: 0 });
 
@@ -46,7 +46,7 @@ export default class Container extends Component {
                     <Transition
                         appear
                         in = { isMoving }
-                        timeout = { 1500 }
+                        timeout = { 1200 }
                         onEnter = { () => this.handleMoveContainer(false) }
                         onExit = { () => this.handleMoveContainer(true) }>
                         <div ref = { (content) => this.content = content }>

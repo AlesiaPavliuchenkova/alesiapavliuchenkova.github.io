@@ -6,15 +6,6 @@ import Styles from './styles.scss';
 import { getUniqueID } from '../../helpers';
 import { NavLink } from 'react-router-dom';
 
-const state = {
-    items: list.map((item) => (
-        <NavLink
-            activeClassName = { Styles.active }
-            className = { Styles.list }
-            key = { getUniqueID(15) }
-            to = { `/${item}` }>{ item }
-        </NavLink>))
-};
 
 const result = shallow(<NavBar />);
 
@@ -29,14 +20,6 @@ describe('NavBar component:', () => {
 
     test('Should have at least 1 \'NavLink\' element', () => {
         expect(result.find(NavLink).length).toBeGreaterThan(0);
-    });
-
-    test('Validate initial state', () => {
-        expect.extend({
-            toBe () {
-                return this.equals(result.state(), state);
-            }
-        });
     });
 
 });

@@ -5,19 +5,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './styles.scss';
 import Header from '../../components/Header';
-import Container from '../../components/Container';
+import Resume from '../Resume';
 import Footer from '../../components/Footer';
 import avatar from '../../theme/assets/avatar.jpg';
 import fbIcon from '../../theme/assets/fb.PNG';
 import inIcon from '../../theme/assets/in.png';
 import githubIcon from '../../theme/assets/github.png';
+import { resumeData } from '../../config/frontend';
 
 // Constants
-const fbLink = 'https://www.facebook.com/lisenok.aesya';
-const inLink = 'https://www.linkedin.com/in/alesia-pavliuchenkova-29303b83/';
-const githubLink = 'https://github.com/AlesiaPavliuchenkova';
-const targetVal = '_blank';
-const apiUser = 'https://api.github.com/users/AlesiaPavliuchenkova';
+const spinnerLink = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif';
 
 export default class Page extends Component {
     static childContextTypes = {
@@ -36,16 +33,16 @@ export default class Page extends Component {
 
     state = {
         profileData: {},
-        email:       '',
         renderFlag:  false
     };
 
     getChildContext () {
         const { profileData } = this.state;
+        const { email, fbLink, githubLink, inLink, phone, targetVal } = resumeData;
 
         return {
             avatar,
-            email: 'alesia.pavliuchenkova@gmail.com',
+            email,
             fbIcon,
             fbLink,
             githubIcon,
@@ -53,12 +50,14 @@ export default class Page extends Component {
             inIcon,
             inLink,
             profileData,
-            phone: '+38(097)746-21-98',
+            phone,
             targetVal
         };
     }
 
     componentWillMount () {
+        const { apiUser } = resumeData;
+
         fetch(apiUser, {
             method: 'GET'
         })
@@ -81,13 +80,17 @@ export default class Page extends Component {
     render () {
 
         if (!this.state.renderFlag) {
-            return null; //prevent render until fetch return response
+            //write my own spinner
+            return (<img
+                className = { Styles.spinner }
+                src = { spinnerLink }
+            />);
         }
 
         return (
             <section className = { Styles.page }>
                 <Header />
-                <Container />
+                <Resume />
                 <Footer />
             </section>
         );

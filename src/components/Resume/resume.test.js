@@ -9,7 +9,7 @@ const state = {
 };
 const result = shallow(<Container />);
 
-describe('Container component:', () => {
+describe('Resume component:', () => {
     test('Should have 1 \'section\' element', () => {
         expect(result.find('section').length).toBe(1);
     });
@@ -33,17 +33,5 @@ describe('Container component:', () => {
     test('Validate initial state', () => {
         expect(result.state()).toEqual(state);
     });
-
-    test('Validate onEnter Transition state', () => {
-        /*const transition = result.find(Transition);
-
-        transition.simulate('enter');
-        const mutatedState = {
-            isMoving: false
-        };*/
-
-        //expect(result.state()).toEqual(mutatedState);
-    });
-
 
 });

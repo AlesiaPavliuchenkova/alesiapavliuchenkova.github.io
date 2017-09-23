@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Skills from './';          //eslint-disable-line
-import { testData } from '../../helpers/testData.js';
+import { testData } from '../../config/testData.js';
 import { skills } from './index'; //eslint-disable-line
 import { Transition, TransitionGroup } from 'react-transition-group';
 

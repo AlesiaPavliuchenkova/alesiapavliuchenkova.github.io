@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Footer from './';
-import { testData } from '../../helpers/testData.js';
+import { testData } from '../../config/testData.js';
 
 const {
     email,

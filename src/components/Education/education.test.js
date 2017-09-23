@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Education from './';          //eslint-disable-line
-import { testData } from '../../helpers/testData.js';
+import { testData } from '../../config/testData.js';
 import { getUniqueID } from '../../helpers/index';
 import { education } from './index'; //eslint-disable-line
 import Styles from './styles.scss';

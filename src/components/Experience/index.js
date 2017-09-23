@@ -33,24 +33,12 @@ export default class Experience extends Component {
         avatar: PropTypes.string.isRequired
     };
 
-    state = {
-        experienceList: []
-    };
-
-    componentWillMount () {
-        this.setState({
-            experienceList: experience.map((item) => (
-                <li key = { getUniqueID(15) }>
-                    <span className = { Styles.header }>Company: { item.company }</span>
-                    <span>Position: { item.position }</span>
-                    <span>Years: { item.startYear } - { item.endYear }</span>
-                </li>))
-        });
+    shouldComponentUpdate () {
+        return false;
     }
 
     render () {
         const { avatar } = this.context;
-        const { experienceList } = this.state;
 
         return (
             <section className = { Styles.experience }>
@@ -58,7 +46,12 @@ export default class Experience extends Component {
                 <div>
                     <h1>Experience</h1>
                     <ul>
-                        { experienceList }
+                        { experience.map((item) => (
+                            <li key = { getUniqueID(15) }>
+                                <span className = { Styles.header }>Company: { item.company }</span>
+                                <span>Position: { item.position }</span>
+                                <span>Years: { item.startYear } - { item.endYear }</span>
+                            </li>)) }
                     </ul>
                 </div>
             </section>

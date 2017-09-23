@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Contact from './';
 import Form from '../../components/Form';
-import { testData } from '../../helpers/testData.js';
+import { testData } from '../../config/testData.js';
 
 const {
     email,
